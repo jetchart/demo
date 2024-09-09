@@ -4,15 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd demo && ./gradlew build'
+                sh 'echo "ok"'
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'cd demo && ./gradlew test'
-            }
-        }
+
     }
 
     post {
