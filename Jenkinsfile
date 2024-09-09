@@ -4,11 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "ok"'
+                echo 'Build failed!'
             }
         }
-
-
     }
 
     post {
