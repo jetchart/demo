@@ -17,6 +17,12 @@ pipeline {
                 bat './gradlew test'
             }
         }
+
+        stage('Docker') {
+                    steps {
+                        bat 'docker build . -t demo:latest'
+                    }
+                }
     }
 
     post {
