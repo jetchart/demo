@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew build'
+                sh 'cd demo && ./gradlew build'
             }
         }
 
         stage('Test') {
             steps {
-                sh './gradlew test'
+                sh 'cd demo && ./gradlew test'
             }
         }
     }
