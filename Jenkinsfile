@@ -4,10 +4,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ls'
+                sh 'gradlew build'
             }
         }
 
+        stage('Test') {
+            steps {
+                sh 'gradlew test'
+            }
+        }
     }
 
     post {
