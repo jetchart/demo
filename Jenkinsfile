@@ -4,9 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build failed!'
+                sh 'ls'
             }
         }
+
     }
 
     post {
