@@ -12,7 +12,7 @@ COPY settings.gradle /app/
 
 # Descargar las dependencias necesarias para la compilación
 RUN ls
-RUN ./gradlew build --no-daemon || return 0
+CMD ./gradlew build --no-daemon || return 0
 
 # Copiar el código fuente de la aplicación
 COPY src /app/src

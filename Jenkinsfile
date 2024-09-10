@@ -6,18 +6,6 @@ pipeline {
         }
 
     stages {
-        stage('Build') {
-            steps {
-                bat './gradlew build'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat './gradlew test'
-            }
-        }
-
         stage('Docker') {
                     steps {
                         bat 'docker build . -t demo:latest'
