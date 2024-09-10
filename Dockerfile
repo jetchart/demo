@@ -6,18 +6,18 @@ WORKDIR /app
 
 # Copiar los archivos de configuración de Gradle
 COPY gradle /app/gradle
-COPY gradlew.bat /app/
+COPY gradlew /app/
 COPY build.gradle /app/
 COPY settings.gradle /app/
 
 # Descargar las dependencias necesarias para la compilación
-RUN ./gradlew.bat build --no-daemon || return 0
+RUN ./gradlewwww build --no-daemon || return 0
 
 # Copiar el código fuente de la aplicación
 COPY src /app/src
 
 # Compilar la aplicación
-RUN ./gradlew.bat build --no-daemon
+RUN ./gradlewwww build --no-daemon
 
 # Fase 2: Ejecución
 FROM eclipse-temurin:17-jdk-alpine
