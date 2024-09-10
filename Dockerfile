@@ -11,13 +11,13 @@ COPY build.gradle /app/
 COPY settings.gradle /app/
 
 # Descargar las dependencias necesarias para la compilación
-RUN ./gradlew.bat build --no-daemon || return 0
+RUN gradlew.bat build --no-daemon || return 0
 
 # Copiar el código fuente de la aplicación
 COPY src /app/src
 
 # Compilar la aplicación
-RUN ./gradlew.bat build --no-daemon
+RUN gradlew.bat build --no-daemon
 
 # Fase 2: Ejecución
 FROM eclipse-temurin:17-jdk-alpine
